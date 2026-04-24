@@ -1,0 +1,2 @@
+sap.ui.define(["sbin/zppstoragebin/controller/Home.controller"],function(o){"use strict";QUnit.module("Home Controller");QUnit.test("I should test the Home controller",function(t){var e=new o;e.onInit();t.ok(e)})});
+//# sourceMappingURL=Home.controller.js.map
