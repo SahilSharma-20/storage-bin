@@ -1,0 +1,71 @@
+<mvc:View
+    controllerName="sbin.zppstoragebin.controller.Layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Page
+        id="layoutPage"
+        title="Storage Yard Layout"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+        class="sbinLayoutPage">
+
+        <subHeader>
+            <!-- Suggestion Banner -->
+            <Bar id="suggestionBar" class="sbinSuggestionBar">
+                <contentLeft>
+                    <core:Icon src="sap-icon://hint" class="sbinSuggestionIcon" />
+                    <Text id="suggestionText" text="Analyzing best bin..." class="sbinSuggestionText" />
+                </contentLeft>
+            </Bar>
+        </subHeader>
+
+        <content>
+            <VBox height="100%" fitContainer="true">
+
+                <!-- Filter + Zoom Toolbar -->
+                <Toolbar class="sbinFilterBar" height="48px">
+                
+                    <Label text="Type:" class="sbinFilterLabel" />
+                    <Select id="filterStorageType" width="90px" change="onFilter">
+                        <core:Item key="" text="All" />
+                        <core:Item key="AC" text="AC" />
+                        <core:Item key="CD" text="CD" />
+                        <core:Item key="DE" text="DE" />
+                        <core:Item key="EF" text="EF" />
+                    </Select>
+                    <ToolbarSpacer width="12px" />
+                    <Label text="Colour:" class="sbinFilterLabel" />
+                    <Select id="filterColor" width="130px" change="onFilter" />
+                    <ToolbarSpacer width="12px" />
+                    <Label text="Section:" class="sbinFilterLabel" />
+                    <Select id="filterSection" width="110px" change="onFilter" />
+                    <ToolbarSpacer />
+                    <Label text="Zoom:" class="sbinFilterLabel" />
+                    <Button icon="sap-icon://zoom-out"  press="onZoomOut"   tooltip="Zoom Out"  type="Transparent" />
+                    <Text id="zoomLevel" text="100%" class="sbinZoomText" />
+                    <Button icon="sap-icon://zoom-in"   press="onZoomIn"    tooltip="Zoom In"   type="Transparent" />
+                    <Button text="↺"                    press="onZoomReset" tooltip="Reset Zoom" type="Transparent" />
+                </Toolbar>
+
+                <!-- Legend -->
+                <HBox id="legendBar" class="sbinLegendBar" wrap="Wrap" />
+
+                <!-- Scrollable Layout Canvas height="calc(100vh - 220px)"-->
+                <ScrollContainer
+                    id="layoutScroll"
+                    horizontal="true"
+                    vertical="true"
+                    height="100%"
+                    width="100%">
+                    <core:HTML
+                        id="binLayout"
+                        content="&lt;div class='sbinPlaceholder'&gt;Loading layout...&lt;/div&gt;"
+                        preferDOM="false"
+                        sanitizeContent="false" />
+                </ScrollContainer>
+
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

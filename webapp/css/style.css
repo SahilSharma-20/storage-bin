@@ -1,0 +1,355 @@
+/* Enter your custom styles here */
+/* ═══════════════════════════════════════════
+   HOME SCREEN
+═══════════════════════════════════════════ */
+.sbinHomeWrapper {
+    min-height: calc(100vh - 3rem);
+    background: linear-gradient(135deg, #e8f4fd 0%, #dce8f5 50%, #cfe0ef 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.sbinHomeCard {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(21, 101, 192, 0.15);
+    padding: 2.5rem 2rem;
+    min-width: 360px;
+    max-width: 420px;
+    gap: 1.25rem;
+}
+
+.sbinHomeTitle {
+    font-size: 1.6rem !important;
+    font-weight: 700 !important;
+    color: #1565C0 !important;
+    text-align: center;
+    margin-bottom: 0.25rem !important;
+}
+
+.sbinHomeSubtitle {
+    color: #546E7A !important;
+    font-size: 0.9rem !important;
+    text-align: center;
+    margin-bottom: 0.5rem !important;
+}
+
+.sbinFormGroup {
+    gap: 0.4rem;
+}
+
+/* ═══════════════════════════════════════════
+   LAYOUT PAGE
+═══════════════════════════════════════════ */
+.sbinLayoutPage {
+    background: #F8F9FA;
+}
+
+/* Suggestion banner */
+.sbinSuggestionBar {
+    background: linear-gradient(90deg, #E3F2FD 0%, #BBDEFB 100%) !important;
+    border-left: 4px solid #1976D2 !important;
+    min-height: 40px !important;
+}
+
+.sbinSuggestionIcon {
+    color: #1976D2 !important;
+    font-size: 1.3rem !important;
+    margin-right: 0.5rem;
+}
+
+.sbinSuggestionText {
+    font-weight: 600 !important;
+    color: #1565C0 !important;
+    font-size: 0.95rem !important;
+}
+
+/* Filter bar */
+.sbinFilterBar {
+    background: #ECEFF1 !important;
+    border-bottom: 1px solid #CFD8DC !important;
+    padding: 0 1rem !important;
+    flex-wrap: wrap;
+}
+
+.sbinFilterLabel {
+    font-size: 0.8rem !important;
+    color: #455A64 !important;
+    margin-right: 4px;
+}
+
+.sbinZoomText {
+    min-width: 38px;
+    text-align: center;
+    font-weight: 700 !important;
+    color: #37474F !important;
+}
+
+/* Legend bar */
+.sbinLegendBar {
+    padding: 4px 12px;
+    background: #FAFAFA;
+    border-bottom: 1px solid #E0E0E0;
+    min-height: 28px;
+}
+
+.sbinLegendWrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: center;
+}
+
+.sbinLegendItem {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    border: 1px solid rgba(0,0,0,0.15);
+    white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════════
+   BIN CELLS
+═══════════════════════════════════════════ */
+.sbinBinCell {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.22);
+    border-radius: 2px;
+    box-sizing: border-box;
+    overflow: hidden;
+    user-select: none;
+    transition: transform 0.08s ease, box-shadow 0.08s ease, z-index 0s;
+}
+
+.sbinBinCell:hover {
+    transform: scale(1.18) !important;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.35) !important;
+    z-index: 20 !important;
+    border-color: #000 !important;
+}
+
+.sbinBinDimmed {
+    cursor: default;
+    pointer-events: none;
+    border-color: rgba(0,0,0,0.08) !important;
+}
+
+/* Suggested bin — pulsing red border */
+.sbinBinSuggested {
+    border: 2px solid #E53935 !important;
+    z-index: 5;
+    animation: sbinPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes sbinPulse {
+    0%   { box-shadow: 0 0 0 1px rgba(229,57,53,0.3),  0 0  5px 1px rgba(229,57,53,0.25); }
+    50%  { box-shadow: 0 0 0 3px rgba(229,57,53,0.5),  0 0 12px 3px rgba(229,57,53,0.50); }
+    100% { box-shadow: 0 0 0 1px rgba(229,57,53,0.3),  0 0  5px 1px rgba(229,57,53,0.25); }
+}
+
+.sbinBinId {
+    font-size: 7.5px;
+    font-weight: 700;
+    line-height: 1.15;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 2px;
+    box-sizing: border-box;
+}
+
+.sbinBinType {
+    font-size: 6.5px;
+    line-height: 1;
+    opacity: 0.75;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Storage type row labels */
+.sbinRowLabel {
+    font-size: 10px;
+    font-weight: 700;
+    color: #455A64;
+    background: rgba(236,239,241,0.85);
+    padding: 1px 4px;
+    border-radius: 2px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Placeholder */
+.sbinPlaceholder {
+    padding: 2rem;
+    color: #B0BEC5;
+    font-size: 1rem;
+    font-style: italic;
+}
+/* ═══════════════════════════════════════════
+   SCAN ROW (input + camera button)
+═══════════════════════════════════════════ */
+.sbinScanRow {
+    gap: 0;
+    align-items: stretch;
+}
+
+.sbinBatchInput {
+    flex: 1 1 auto;
+    border-radius: 4px 0 0 4px !important;
+}
+
+.sbinScanBtn {
+    border-radius: 0 4px 4px 0 !important;
+    min-width: 44px;
+    flex-shrink: 0;
+    background: #1565C0 !important;
+    color: #fff !important;
+    border-left: none !important;
+}
+
+.sbinScanBtn:hover {
+    background: #0D47A1 !important;
+}
+
+.sbinScanStatus {
+    font-size: 0.78rem !important;
+    color: #2E7D32 !important;
+    margin-top: 4px !important;
+    font-style: italic;
+    min-height: 18px;
+}
+
+/* ═══════════════════════════════════════════
+   CAMERA SCAN OVERLAY
+═══════════════════════════════════════════ */
+#sbinScanOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sbinScanModal {
+    background: #1A1A2E;
+    border-radius: 16px;
+    width: min(420px, 94vw);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.sbinScanHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    background: #16213E;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.sbinScanTitle {
+    color: #E3F2FD;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.sbinScanClose {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+}
+
+.sbinScanClose:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+.sbinScanBody {
+    position: relative;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sbinScanVideo {
+    width: 100%;
+    max-height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: #000;
+}
+
+/* Viewfinder frame overlaid on video */
+.sbinScanFrame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -58%);
+    width: 200px;
+    height: 160px;
+    pointer-events: none;
+}
+
+/* Corner accents */
+.sbinScanCornerTL,
+.sbinScanCornerTR,
+.sbinScanCornerBL,
+.sbinScanCornerBR {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-color: #29B6F6;
+    border-style: solid;
+}
+.sbinScanCornerTL { top: 0; left: 0;  border-width: 3px 0 0 3px; border-radius: 4px 0 0 0; }
+.sbinScanCornerTR { top: 0; right: 0; border-width: 3px 3px 0 0; border-radius: 0 4px 0 0; }
+.sbinScanCornerBL { bottom: 0; left: 0;  border-width: 0 0 3px 3px; border-radius: 0 0 0 4px; }
+.sbinScanCornerBR { bottom: 0; right: 0; border-width: 0 3px 3px 0; border-radius: 0 0 4px 0; }
+
+/* Animated scan line */
+.sbinScanLine {
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #29B6F6, transparent);
+    animation: sbinScanMove 2s ease-in-out infinite;
+    top: 0;
+}
+
+@keyframes sbinScanMove {
+    0%   { top: 4px;  opacity: 1; }
+    50%  { top: calc(100% - 6px); opacity: 1; }
+    100% { top: 4px;  opacity: 1; }
+}
+
+.sbinScanHint {
+    color: #90CAF9;
+    font-size: 0.78rem;
+    margin-top: 10px;
+    text-align: center;
+    font-style: italic;
+}

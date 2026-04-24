@@ -1,0 +1,48 @@
+<mvc:View
+    controllerName="sbin.zppstoragebin.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="Bin Layout" showHeader="false">
+        <content>
+            <VBox
+                class="sbinHomeWrapper"
+                alignItems="Center"
+                justifyContent="Center"
+                height="100%">
+                <VBox class="sbinHomeCard" alignItems="Center">
+                    <Image src="sap-icon://SAP-icons-TNT/system" class="sbinLogo" />
+                    <Title text="Storage Yard Bin Assignment" class="sbinHomeTitle" level="H1" />
+                    <Text text="Enter your Batch ID or scan a barcode / QR code" class="sbinHomeSubtitle" />
+
+                    <VBox width="100%" class="sbinFormGroup">
+                        <Label text="Batch ID" for="batchInput" />
+                        <HBox width="100%" class="sbinScanRow">
+                            <Input
+                                id="batchInput"
+                                placeholder="e.g. BATCH-2024-001"
+                                valueLiveUpdate="true"
+                                submit="onSubmit"
+                                class="sbinBatchInput" />
+                            <Button
+                                id="scanBtn"
+                                icon="sap-icon://bar-code"
+                                tooltip="Scan Barcode / QR Code"
+                                type="Default"
+                                press="onScan"
+                                class="sbinScanBtn" />
+                        </HBox>
+                        <Text id="scanStatusText" text="" class="sbinScanStatus" visible="false" />
+                    </VBox>
+
+                    <Button
+                        id="submitBtn"
+                        text="Find Best Bin"
+                        type="Emphasized"
+                        icon="sap-icon://navigation-right-arrow"
+                        press="onSubmit"
+                        width="100%" />
+                </VBox>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
